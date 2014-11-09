@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="personalSite">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- inject:vendor:css-->
+    <!-- endinject-->
+    <!-- inject:custom:css-->
+    <link rel="stylesheet" href="/base.css">
+    <!-- endinject-->
+    <title>personalSite</title>
+    <base href="/">
+  </head>
+  <body ng-class="pageName" ng-controller="siteControlCtrl" fullscreen-background="{{config.backgroundUrl}}">
+    <navbar shown="{{showNavbar}}" menu-items="config.menuItems"></navbar>
+    <section ui-view></section>
+    <!-- inject:vendor:js-->
+    <script src="/angular/angular.js"></script>
+    <script src="/json3/lib/json3.js"></script>
+    <script src="/es5-shim/es5-shim.js"></script>
+    <script src="/lodash/dist/lodash.compat.js"></script>
+    <script src="/angular-cookies/angular-cookies.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/angular-classy/angular-classy.js"></script>
+    <!-- endinject-->
+    <!-- inject:custom:js-->
+    <script src="/modules/vendor/lodash/lodash.js"></script>
+    <script src="/modules/projects/projects_controller.js"></script>
+    <script src="/modules/projects/project/project_directive.js"></script>
+    <script src="/modules/word_wrap/word_wrap_filter.js"></script>
+    <script src="/modules/site_control/site_control_controller.js"></script>
+    <script src="/modules/photo_ball/photo_ball_directive.js"></script>
+    <script src="/modules/navigation_items/navigation_items_directive.js"></script>
+    <script src="/modules/navbar/navbar_directive.js"></script>
+    <script src="/modules/keyword/keyword_filter.js"></script>
+    <script src="/modules/home/home_controller.js"></script>
+    <script src="/modules/fullscreen_background/fullscreen_background_directive.js"></script>
+    <script src="/modules/comma_words/comma_words_filter.js"></script>
+    <script src="/app.js"></script>
+    <script src="/config.js"></script>
+    <!-- endinject-->
+  </body>
+</html>
