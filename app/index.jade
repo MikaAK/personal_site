@@ -1,0 +1,23 @@
+doctype html
+html(ng-app='personalSite')
+  head
+    meta(charset="utf-8")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    // inject:vendor:css
+    // endinject
+    // inject:custom:css
+    // endinject
+    title personalSite
+    base(href="/")
+  body(ng-class='pageName' ng-controller='siteControlCtrl' fullscreen-background='{{backgroundUrl}}')
+    navbar(shown='{{showNavbar}}' menu-items='home.menuItems')
+    section(ui-view)
+    
+    // inject:vendor:js
+    
+    // endinject
+
+    // inject:custom:js
+
+    // endinject

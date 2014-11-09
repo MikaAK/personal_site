@@ -1,0 +1,19 @@
+$fadedCounter: 10;
+$grayCounter: 10;
+
+img.photo-ball {
+  @include size(100%);
+  border-radius: 50%;
+
+  @for $i from 1 through $fadedCounter {
+    &.faded-#{$i} {
+      opacity: $i / 10;
+    }
+  }
+
+  @for $i from 1 through $grayCounter {
+    &.gray-#{$i} {
+      @include filter(grayscale(percentage($i / 10)))
+    }
+  }
+}

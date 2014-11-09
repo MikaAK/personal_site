@@ -1,0 +1,19 @@
+{
+  "generator-mika": {
+    "appName": "personalSite",
+    "classy": true,
+    "restangular": false,
+    "ngResource": false,
+    "angularRoute": false,
+    "uiRouter": true,
+    "ngAnimate": true,
+    "ngTouch": false,
+    "ngSanitize": false,
+    "uiBootstrap": true,
+    "cssPreprocessor": "SCSS",
+    "camelize": "function (string) {\n    if (!string) return\n    var strArray,\n        finalStr,\n        curStr;\n\n    strArray = string.split(/[-_ ]/)\n    finalStr = strArray.shift().toLowerCase()\n\n    for (var i in strArray) {\n      curStr = strArray[i]\n      finalStr += curStr.substring(0, 1).toUpperCase() + curStr.substring(1)\n    }\n    return finalStr\n  }",
+    "snakeCase": "function (string) {\n    if (!string) return\n    var words = string.split(/[_ -]/)\n    return words.join('_')\n  }",
+    "functionParamsDecoder": "(?:function ?\\()(.*)\\)",
+    "functionDecoder": "(?:\\n|\\r)((.|[\\n\\r])*)(?:})$"
+  }
+}

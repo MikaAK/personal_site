@@ -1,0 +1,17 @@
+html, body,
+body > section,
+.fill-parent {
+  @include size(100%);
+}
+
+.about-body {
+
+}
+
+.home-body {
+
+}
+
+.projects-body {
+  height: auto;
+}

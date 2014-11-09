@@ -1,0 +1,63 @@
+.project {
+  background-color: $dark-gray;
+  padding: 0 1.5em;
+  height: 100%;
+  
+  &:hover {
+    .project-image .description {
+      opacity: 1;
+    }
+  }
+
+  hr {
+    border-color: $medium-gray;
+    margin: 0;
+  }
+
+  .title {
+    padding-top: .25em;
+    text-align: center;
+    margin-bottom: .25em;
+    color: $light-gray;
+  }
+
+  .project-image {
+    @include span-columns(12);
+    height: em(172);
+    margin-top: 1.5em;
+    position: relative;
+
+    .description {
+      @include transition(all .5s ease-in-out);
+      padding-top: em(10);
+      font-size: .9em;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      height: 100%;
+      color: $medium-gray;
+      background-color: rgba($dark-gray, 1);
+    }
+
+    .languages {
+      left: 0;
+    }
+
+    .frameworks {
+      right: 0;
+    }
+
+    .languages,
+    .frameworks {
+      bottom: 0;
+      font-size: .8em;
+      color: $light-gray;
+      position: absolute;
+
+      strong {
+        font-weight: bolder;
+        color: $medium-gray;
+      }
+    }
+  }
+}
