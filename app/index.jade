@@ -10,8 +10,8 @@ html(ng-app='personalSite')
     // endinject
     title personalSite
     base(href="/")
-  body(ng-class='pageName' ng-controller='siteControlCtrl' fullscreen-background='{{backgroundUrl}}')
-    navbar(shown='{{showNavbar}}' menu-items='home.menuItems')
+  body(ng-class='pageName' ng-controller='siteControlCtrl' fullscreen-background='{{config.backgroundUrl}}')
+    navbar(shown='{{showNavbar}}' menu-items='config.menuItems')
     section(ui-view)
     
     // inject:vendor:js

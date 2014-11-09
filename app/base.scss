@@ -13,7 +13,6 @@
 // Home Module
 // ===========
 @import 'modules/home/home';
-@import 'modules/home/home_nav/home_nav';
 
 // Projects Module
 // ===============
@@ -23,3 +22,11 @@
 // PhotoBall Module
 // ================
 @import 'modules/photo_ball/photo_ball';
+
+// Navbar Module
+// =============
+@import 'modules/navbar/navbar';
+
+// Navigation Items Module
+// =======================
+@import 'modules/navigation_items/navigation_items';

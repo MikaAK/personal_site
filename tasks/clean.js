@@ -6,7 +6,7 @@ var shallowError = function(error) {
 }
 
 gulp.task('clean', function() {
-  return gulp.src(['.tmp'], {
+  return gulp.src(['.tmp', 'build'], {
       read:false,
       force: true
     })

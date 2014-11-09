@@ -1,3 +1,5 @@
+'use strict'
+
 angular.module('personalSite.photoBall', [])
   .directive('photoBall', [function() {
     return {

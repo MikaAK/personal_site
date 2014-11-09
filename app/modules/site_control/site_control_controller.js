@@ -3,14 +3,15 @@
 angular.module('personalSite.siteControl', ['classy', 'personalSite.home'])
   .classy.controller({
     name: 'siteControlCtrl',
-    inject: ['$scope', '$rootScope', 'siteConfig', 'Home'],
+    inject: ['$scope', '$rootScope', '$state', 'siteConfig'],
 
     init: function() {
       var self = this
 
-      this.$.home = this.Home
-      this.$.backgroundUrl = this.siteConfig.backgroundUrl
-      this.$rootScope.$on('$stateChangeStart', function(event, toState, toStateParams) {
+      this.$.config = this.siteConfig
+      this.$.showNavbar = false
+
+      this.$rootScope.$on('$stateChangeStart', function(event, toState) {
         var stateName = toState.name
 
         self.$rootScope.pageName = stateName + '-body'

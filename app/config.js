@@ -4,6 +4,12 @@ angular.module('personalSite')
       centerImageUrl: 'https://s3-us-west-2.amazonaws.com/mika-personal/images/misc/personal_image.jpeg'
     },
     backgroundUrl: 'https://s3-us-west-2.amazonaws.com/mika-personal/images/backgrounds/stary_night.jpg',
+    menuItems: [
+      { title: 'Home',          state: 'home',     active: false },
+      { title: 'Contact Me',    state: 'contact',  active: false },
+      { title: 'Past Projects', state: 'projects', active: false },
+      { title: 'About Me',      state: 'about',    active: false }
+    ],
     projects: [
       {
         title: 'Foodee',

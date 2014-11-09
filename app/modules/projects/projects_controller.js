@@ -1,13 +1,13 @@
 'use strict'
 
-angular.module('personalSite.projects')
+angular.module('personalSite.projects', ['classy'])
   .classy.controller({
     name: 'projectsCtrl',
 
-    inject: ['$scope', 'Project'],
+    inject: ['$scope', 'siteConfig'],
 
     init: function() {
-      this.$.project = this.Project
+      this.$.config = this.siteConfig
       this.$.imageSelection = 0
     },
 

@@ -1,8 +1,9 @@
 .project {
+  @include span-columns(12);
   background-color: $dark-gray;
   padding: 0 1.5em;
-  height: 100%;
-  
+  padding-bottom: 1em;
+
   &:hover {
     .project-image .description {
       opacity: 1;
@@ -12,6 +13,7 @@
   hr {
     border-color: $medium-gray;
     margin: 0;
+    border-height: 1px;
   }
 
   .title {
@@ -23,9 +25,13 @@
 
   .project-image {
     @include span-columns(12);
-    height: em(172);
+    height: 63.5%;
     margin-top: 1.5em;
     position: relative;
+
+    img {
+      width: 100%;
+    }
 
     .description {
       @include transition(all .5s ease-in-out);

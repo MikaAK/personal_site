@@ -10,7 +10,7 @@ angular.module('personalSite',
    'personalSite.siteControl'
   ])
 
-	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/')
 
@@ -34,7 +34,4 @@ angular.module('personalSite',
 
 		// use the HTML5 History API
 		// $locationProvider.html5Mode(true)
-	})
-  .run(['$rootScope', 'siteConfig', function($rootScope, siteConfig) {
-    
-  }])
+	}])

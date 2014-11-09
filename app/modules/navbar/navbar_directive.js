@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('personalSite.navbar', [])
+angular.module('personalSite.navbar', ['personalSite.navigationItems'])
   .directive('navbar', [function() {
     return {
       restrict: 'E',
@@ -11,8 +11,8 @@ angular.module('personalSite.navbar', [])
       },
       templateUrl: "modules/navbar/navbar.html",
       link: function(scope, ele, attr) {
-        attr.$observe('shown', function() {
-          scope.show = scope.$eval(attr.shown)
+        attr.$observe('shown', function(val) {
+          scope.shown = scope.$eval(val)
         })
       }
     }

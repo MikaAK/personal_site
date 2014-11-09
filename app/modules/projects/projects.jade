@@ -1,4 +1,4 @@
 section.projects.fill-parent
-  ul.projects-container
-    li.project-wrapper(ng-repeat='project in ::project.projects')
+  ul.projects-container.fill-parent
+    li.project-wrapper(ng-repeat='project in ::config.projects')
       project(data='project')

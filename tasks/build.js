@@ -58,7 +58,7 @@ gulp.task('jade2js', ['javascript', 'sass'], function() {
         if (name.indexOf('/') != -1)
           name = name.replace(/[^/]+$/, '').replace('/', '')
 
-        return 'personalsite' + camelize(name)
+        return 'personalSite.' + camelize(name)
       },
       prefix: 'modules/'
     }))
@@ -77,14 +77,17 @@ gulp.task('tempJS', ['jade2js'], function() {
 })
 
 gulp.task('minify', ['tempJS'], function() {
+  var files = removeJs(bowerFiles())
+  files.push('.tmp/**/*.css')
+
   gulp.src(['build/.tmp/vendor.js', 'build/.tmp/custom.js', 'build/.tmp/templates.js'])
-    .pipe($.concat('all.js'))
     .pipe($.uglify())
+    .pipe($.concat('all.js'))
     .pipe($.rev())
     .pipe(gulp.dest('build'))
-  return gulp.src(['.tmp/**/*.css', removeJs(bowerFiles())])
-    .pipe($.concat('all.css'))
+  return gulp.src(files)
     .pipe($.minifyCss())
+    .pipe($.concat('all.css'))
     .pipe($.rev())
     .pipe(gulp.dest('build'))
 })

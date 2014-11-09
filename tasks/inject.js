@@ -49,6 +49,10 @@ gulp.task('inject', ['sass', 'jade', 'javascript'], function() {
 
 gulp.task('build-inject', function() {
   return gulp.src('.tmp/**/*.html')
-    .pipe($.inject(gulp.src('build/*', {read: false}), {starttag: '<!-- inject:custom:{{ext}}-->', endtag: '<!-- endinject-->'}))
-    .pipe($.gulp.dest('build'))
+    .pipe($.inject(gulp.src('build/*', {read: false}), {
+      ignorePath: 'build/',
+      starttag: '<!-- inject:custom:{{ext}}-->',
+      endtag: '<!-- endinject-->'
+    }))
+    .pipe(gulp.dest('build'))
 })

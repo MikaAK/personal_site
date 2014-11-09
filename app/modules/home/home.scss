@@ -11,6 +11,13 @@
     margin-top: em(80);
     color: $light-gray;
 
+    .item a {
+      @include transition(all .3s ease-in-out);
+      font-family: Tarantella;
+      font-size: 4em;
+      color: $medium-gray;
+    }
+
     .home-nav {
       a {
         position: relative;
@@ -19,11 +26,12 @@
           @include transition(all .4s ease-in-out);
           @include size(100%);
           content: attr(data-content);
+          white-space: nowrap;
           position: absolute;
           overflow: hidden;
           line-height: 1em;
           color: $red;
-          width: 0%;
+          width: 0;
           height: 97%;
           left: 0;
           bottom: 2px;
