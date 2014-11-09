@@ -63,3 +63,5 @@ node_modules
 ### Bower ###
 bower_components
 
+### Custom ###
+.tmp
