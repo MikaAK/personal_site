@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('personalSite.navigationItems', ['vendor.lodash'])
+angular.module('personalSite.navigationItems', ['vendor.lodash', 'personalSite.keyWord'])
   .directive('navigationItems', ['_', '$state', '$rootScope', function(_, $state, $rootScope) {
     return {
       restrict: 'E',
@@ -9,10 +9,8 @@ angular.module('personalSite.navigationItems', ['vendor.lodash'])
       },
       templateUrl: "modules/navigation_items/navigation_items.html",
       link: function(scope, ele, attrs) {
-        if ('singleWords' in attrs) {
-          scope.menuItems = _(scope.menuItems).each(function(item) {
-            item.title = item.title.split(' ')[0]
-          }).value()
+        if ('keyWord' in attrs) {
+          scope.keyWord = true
         }
 
         var getMenuItem = function(name) {
@@ -27,8 +25,8 @@ angular.module('personalSite.navigationItems', ['vendor.lodash'])
 
           if (oldItem && oldItem.active)
             oldItem.active = false
-
-          activeItem.active = true
+          if (activeItem)
+            activeItem.active = true
         }
         changeActiveItem('', $state.$current)
         $rootScope.$on('$stateChangeStart', changeActiveItem)

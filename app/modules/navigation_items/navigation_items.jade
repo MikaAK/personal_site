@@ -1,4 +1,4 @@
 ul.navigation-items
   li.item(ng-repeat='item in menuItems | filter:{active:false}')
     a(ui-sref='{{item.state}}' data-content='{{item.title}}') 
-      | {{ item.title }}
+      | {{ item.title | keyWord: keyWord }}
