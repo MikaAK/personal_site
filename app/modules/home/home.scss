@@ -1,8 +1,25 @@
 .home {
-  .home-image-wrapper {
+  .top-content {
     @include display(flex);
     @include justify-content(center);
     padding-top: em(100);
+    width: 100%;
+  }
+
+  .home-image-wrapper {
+    @include animation(image-slide 2s 2s forwards ease-in-out);
+    position: relative;
+  }
+
+  .name-title {
+    @include animation(title-slide 2s 2s forwards ease-in-out);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: golden-ratio(45px, 1);
+    color: $medium-gray;
+    margin-top: .5em;
+    width: 0;
   }
 
   .navigation {
@@ -42,5 +59,27 @@
         }
       }
     }
+  }
+}
+
+@include keyframes(image-slide) {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: 3.5%
+  }
+}
+
+@include keyframes(title-slide) {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+
+  100% {
+    left: 2%;
+    width: 39%;
   }
 }

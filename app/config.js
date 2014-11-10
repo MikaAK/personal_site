@@ -27,7 +27,7 @@ angular.module('personalSite')
                      'can\'t get delivered otherwise).'
       }, {
         title: 'Educ8',
-        url: 'https://educ8.io',
+        url: 'https://www.educ8.io',
         imageUrls: ['https://s3-us-west-2.amazonaws.com/mika-personal/images/projects/Educ8.png'],
         languages: ['Javascript', 'Ruby'],
         frameworks: ['Angular', 'Rails', 'Node'],

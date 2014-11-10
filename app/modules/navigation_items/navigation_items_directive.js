@@ -10,9 +10,9 @@ angular.module('personalSite.navigationItems', ['vendor.lodash', 'personalSite.k
       templateUrl: "modules/navigation_items/navigation_items.html",
       link: function(scope, ele, attrs) {
         if ('keyWord' in attrs)
-          scope.keyWord = true
+          scope.keyWordEnabled = true
         if ('ordered' in attrs)
-          scope.ordered = true
+          scope.orderedEnabled = true
 
         var getMenuItem = function(name) {
           return  _(scope.menuItems).find(function(page) {
