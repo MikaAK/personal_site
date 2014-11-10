@@ -1,6 +1,6 @@
 .projects {
   @include span-columns(12);
-  
+
   .projects-container {
     @include display(flex);
     @include flex-wrap(wrap);
@@ -9,7 +9,6 @@
 
     .project-wrapper {
       @include span-columns(4);
-      @include clearfix;
       height: percentage(312 / 1259);
       opacity: .6;
       padding-top: 2.5em;

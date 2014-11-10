@@ -23,36 +23,18 @@ angular.module('personalSite.navigationItems')
         })
       }
 
-      var findContact = function() {
-        return inputWrapped.find(function(im) {
-          return im.state == 'contact'
-        })
-      }
-
       var finalOrder   = [],
           inputWrapped = _(input),
           homeItem     = findHome(),
           projectItem  = findProject(),
-          contactItem  = findContact(),
           aboutItem    = findAbout()
 
-      if (homeItem) {
+      if (homeItem) 
         finalOrder.push(homeItem)
-
-        if (projectItem)
-          finalOrder.push(projectItem)
-        if (contactItem)
-          finalOrder.push(contactItem)
-        if (aboutItem)
-          finalOrder.push(aboutItem)
-      } else {
-        if (contactItem || aboutItem)
-          finalOrder.push(contactItem || aboutItem)
-        if (projectItem)
-          finalOrder.push(projectItem)
-        if (aboutItem || contactItem)
-          finalOrder.push(aboutItem || contactItem)
-      }
+      if (projectItem)
+        finalOrder.push(projectItem)
+      if (aboutItem)
+        finalOrder.push(aboutItem)
 
       return finalOrder
     }

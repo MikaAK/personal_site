@@ -21,10 +21,8 @@ angular.module('personalSite',
 				templateUrl: 'modules/home/home.html'
 			})
       .state('about', {
-        url: '/about'
-      })
-      .state('contact', {
-        url: '/contact'
+        url: '/about',
+        templateUrl: 'modules/about/about.html'
       })
       .state('projects', {
         url: '/projects',
@@ -33,5 +31,5 @@ angular.module('personalSite',
       })
 
 		// use the HTML5 History API
-		$locationProvider.html5Mode(true)
+		// $locationProvider.html5Mode(true)
 	}])
