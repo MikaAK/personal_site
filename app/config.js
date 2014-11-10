@@ -1,9 +1,9 @@
 angular.module('personalSite')
   .constant('siteConfig', {
     home: {
-      centerImageUrl: 'https://s3-us-west-2.amazonaws.com/mika-personal/images/misc/personal_image.jpeg'
+      centerImageUrl: 'https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/misc/personal_image.jpeg'
     },
-    backgroundUrl: 'https://s3-us-west-2.amazonaws.com/mika-personal/images/backgrounds/stary_night.jpg',
+    backgroundUrl: 'https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/backgrounds/stary_night.jpg',
     menuItems: [
       { title: 'Home',          state: 'home',     active: false },
       { title: 'Contact Me',    state: 'contact',  active: false },
@@ -15,8 +15,8 @@ angular.module('personalSite')
         title: 'Foodee',
         url: 'https://toronto.food.ee',
         imageUrls: [
-          'https://s3-us-west-2.amazonaws.com/mika-personal/images/projects/Foodee.png',
-          'https://s3-us-west-2.amazonaws.com/mika-personal/images/projects/Foodee_2.png'
+          'https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/projects/Foodee.png',
+          'https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/projects/Foodee_2.png'
         ],
         languages: ['Javascript', 'Ruby'],
         frameworks: ['Angular', 'Rails'],
@@ -28,7 +28,7 @@ angular.module('personalSite')
       }, {
         title: 'Educ8',
         url: 'https://www.educ8.io',
-        imageUrls: ['https://s3-us-west-2.amazonaws.com/mika-personal/images/projects/Educ8.png'],
+        imageUrls: ['https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/projects/Educ8.png'],
         languages: ['Javascript', 'Ruby'],
         frameworks: ['Angular', 'Rails', 'Node'],
         description: 'Educ8 was a final project during Lighthouse Labs. Created ' +
@@ -37,7 +37,7 @@ angular.module('personalSite')
       }, {
         title: 'Cohort Board',
         url: 'http://cohort-board.herokuapp.com/',
-        imageUrls: ['https://s3-us-west-2.amazonaws.com/mika-personal/images/projects/Cohortboard.png'],
+        imageUrls: ['https://s3-us-west-2.amazonaws.com/staging.mikakalathil.ca/images/projects/Cohortboard.png'],
         languages: ['Ruby'],
         frameworks: ['Rails'],
         description: 'The cohort board was my midway project at Lighthouse Labs. ' +
