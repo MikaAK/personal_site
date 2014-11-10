@@ -68,3 +68,4 @@ bower_components
 build
 assets
 *.zip
+aws.json
