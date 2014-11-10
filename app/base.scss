@@ -1,12 +1,12 @@
 @import '../bower_components/reset-scss/reset';
 @import '../bower_components/bourbon/dist/bourbon';
-@import 'styles/grid-settings.scss';
+@import 'vendor/base/grid-settings';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
-@import '../bower_components/bitters/app/assets/stylesheets/base';
+@import 'styles/variables';
+@import 'vendor/base/base';
 
 // Global Styles
 // =============
-@import 'styles/variables';
 @import 'styles/fonts';
 @import 'styles/globals';
 

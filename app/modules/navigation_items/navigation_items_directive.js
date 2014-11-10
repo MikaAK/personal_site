@@ -9,9 +9,10 @@ angular.module('personalSite.navigationItems', ['vendor.lodash', 'personalSite.k
       },
       templateUrl: "modules/navigation_items/navigation_items.html",
       link: function(scope, ele, attrs) {
-        if ('keyWord' in attrs) {
+        if ('keyWord' in attrs)
           scope.keyWord = true
-        }
+        if ('ordered' in attrs)
+          scope.ordered = true
 
         var getMenuItem = function(name) {
           return  _(scope.menuItems).find(function(page) {
@@ -28,7 +29,8 @@ angular.module('personalSite.navigationItems', ['vendor.lodash', 'personalSite.k
           if (activeItem)
             activeItem.active = true
         }
-        changeActiveItem('', $state.$current)
+
+        changeActiveItem('', $state.$current) // Used for initial load *possible bug*
         $rootScope.$on('$stateChangeStart', changeActiveItem)
       }
     }

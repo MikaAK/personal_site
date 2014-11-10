@@ -16,3 +16,20 @@ body > section,
 .projects-body {
   height: auto;
 }
+
+.blue {
+  color: lighten($blue, 20) !important;
+  border-color: lighten($blue, 20) !important;
+}
+.red {
+  color: $red !important;
+  border-color: $red !important;
+}
+.yellow {
+  color: $yellow !important;
+  border-color: $yellow !important;
+}
+.green {
+  color: $green !important;
+  border-color: $green !important;
+}

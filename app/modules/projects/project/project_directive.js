@@ -1,13 +1,34 @@
 'use strict'
 
 angular.module('personalSite.projects')
-  .directive('project', [function() {
+  .directive('project', ['_', function(_) {
     return {
       restrict: 'E',
       replace: true,
       scope: {
         data: '='
       },
-      templateUrl: "modules/projects/project/project.html"
+      templateUrl: 'modules/projects/project/project.html',
+      link: function(scope, ele) {
+        var titleEle = ele.find('h3'),
+            hrEle    = ele.find('hr')
+
+        var randomColor = function() {
+          return _(['red', 'green', 'blue', 'yellow']).sample()
+        }
+
+        var toggleClass = function(className) {
+          titleEle.toggleClass(className)
+          hrEle.toggleClass(className)
+        }
+        ele.on('mouseenter', function() {
+          this.randomColor = randomColor()
+          toggleClass(this.randomColor)
+        })
+
+        ele.on('mouseleave', function() {
+          toggleClass(this.randomColor)
+        })
+      }
     }
   }])
