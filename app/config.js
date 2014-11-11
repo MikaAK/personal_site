@@ -38,6 +38,7 @@ angular.module('personalSite')
       }, {
         title: 'Educ8',
         url: 'https://www.educ8.io',
+        githubUrl: 'https://github.com/Educ8-2014',
         imageUrls: ['https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/projects/Educ8.png'],
         languages: ['Javascript', 'Ruby'],
         frameworks: ['Angular', 'Rails', 'Node'],
@@ -47,6 +48,7 @@ angular.module('personalSite')
       }, {
         title: 'Cohort Board',
         url: 'http://cohort-board.herokuapp.com/',
+        githubUrl: 'https://github.com/MikaAK/Cohorts-Board',
         imageUrls: ['https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/projects/Cohortboard.png'],
         languages: ['Ruby'],
         frameworks: ['Rails'],

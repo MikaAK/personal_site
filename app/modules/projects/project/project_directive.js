@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('personalSite.projects')
-  .directive('project', ['_', function(_) {
+  .directive('project', ['_', 'siteConfig', function(_, siteConfig) {
     return {
       restrict: 'E',
       replace: true,
@@ -29,6 +29,7 @@ angular.module('personalSite.projects')
         ele.on('mouseleave', function() {
           toggleClass(this.randomColor)
         })
+        scope.siteConfig = siteConfig
       }
     }
   }])

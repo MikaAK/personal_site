@@ -1,16 +1,19 @@
-a(ng-href='{{::data.url}}' target='_blank')
-  .project
-      
-    h3.title {{ ::data.title }}
+.project
     
-    
-    hr(ng-show='data.imageUrls[0]')
+  h3.title {{ ::data.title }}
+  
+  hr(ng-show='data.imageUrls[0]')
 
-    .project-image
-      img(ng-src='{{data.imageUrls[0]}}')
+  .project-image
+    img(ng-src='{{data.imageUrls[0]}}')
+      
+    .github-url(ng-if='data.githubUrl')
+      a(ng-href='{{data.githubUrl}}' target='_blank')
+        img(ng-src='{{siteConfig.github.logoHigh}}' ng-onerror='{{siteConfig.github.logoLow}}')
+          
+    a(ng-href='{{::data.url}}' target='_blank')      
       .description(ng-show='data.description') 
         | {{ ::data.description }}
-        
         .languages(ng-show='data.languages')
           strong
             | Languages: 
