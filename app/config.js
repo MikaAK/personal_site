@@ -4,6 +4,17 @@ angular.module('personalSite')
       centerImageUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/personal_image.jpeg'
     },
     backgroundUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/backgrounds/stary_night.jpg',
+    github: {
+      url: 'http://github.com/MikaAK',
+      logoLow: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/github-low.png',
+      logoHigh: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/github-high.svg'
+    },
+    linkedin: {
+      url: 'http://linkedin.com/in/mikakalathil',
+      logoLow: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/linkedin-logo-low.png',
+      logoHigh: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/linkedin-logo-high.svg'
+    },
+    email: 'mikakalathil@gmail.com',
     menuItems: [
       { title: 'Home',          state: 'home',     active: false },
       { title: 'Past Projects', state: 'projects', active: false },

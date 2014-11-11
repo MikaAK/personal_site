@@ -1,4 +1,37 @@
 .home {
+  .icons {
+    @include display(flex);
+    @include justify-content(flex-end);
+
+    .github,
+    .linkedin {
+      @include size(25px);
+      @include transition(all .5s ease-in-out);
+      opacity: 0;
+    }
+
+    .github {
+      @include animation(fade-in 1s 5.5s forwards ease-in-out);
+      margin-right: .5em;
+
+      &:hover {
+        @include filter(invert(.5));
+      }
+    }
+
+    .linkedin {
+      @include animation(fade-in 1s 6.5s forwards ease-in-out);
+
+      &:hover {
+        @include filter(brightness(120%));
+      }
+    }
+
+    .image {
+      width: 100%;
+    }
+  }
+
   .top-content {
     @include display(flex);
     @include justify-content(center);
@@ -11,22 +44,50 @@
     position: relative;
   }
 
-  .name-title {
+  .title-details {
     @include animation(title-slide 2s 1.5s forwards ease-in-out);
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    font-size: golden-ratio(45px, 1);
     color: $medium-gray;
     margin-top: .5em;
     width: 0;
 
+    .name {
+      font-size: golden-ratio(45px, 1);
+      height: 1.3em;
+    }
+
     .subtite {
-      @include animation(subtite-slide 2s 3.5s forwards ease-in-out);
-      @include span-columns(5);
-      @include shift(7);
+      @include animation(subtitle-slide 1s 3.5s forwards ease-in-out);
+      @include span-columns(3);
+      position: relative;
       font-size: golden-ratio(45px, -1);
+      overflow: hidden;
+      left: 42%;
+      height: .9em;
+      line-height: .9em;
       width: 0;
+    }
+
+    .contact-details {
+      @include span-columns(7);
+      padding-left: 5.35765%;
+      font-size: golden-ratio(45px, -2);
+    }
+
+    .email {
+      @include animation(fade-in 1s 4.5s forwards ease-in-out);
+      opacity: 0;
+
+      a {
+        @include transition(all .3s ease-in-out);
+        color: $light-gray;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
     }
   }
 
@@ -82,13 +143,15 @@
   }
 }
 
-@include keyframes(subtite-slide) {
+@include keyframes(subtitle-slide) {
   0% {
+    left: 40%;
     width: 0%;
   }
 
   100% {
-    width: 0%;
+    width: 40%;
+    left: 1%;
   }
 }
 
