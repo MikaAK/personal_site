@@ -6,6 +6,7 @@ angular.module('personalSite',
    'ngCookies',
    'personalSite.ngOnerror',
    'personalSite.home',
+   'personalSite.about',
    'personalSite.projects',
    'personalSite.navbar',
    'personalSite.siteControl'
@@ -23,6 +24,7 @@ angular.module('personalSite',
 			})
       .state('about', {
         url: '/about',
+        controller: 'aboutCtrl',
         templateUrl: 'modules/about/about.html'
       })
       .state('projects', {

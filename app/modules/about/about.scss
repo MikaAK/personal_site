@@ -1,0 +1,16 @@
+.about {
+  @include span-columns(12);
+  @include display(flex);
+  @include align-items(center);
+  height: 90%; 
+
+  .personal-image {
+    @include shift(1);
+    @include span-columns(3 of 12);
+  }
+
+  .bio {
+    @include span-columns(7 of 12);
+    color: $medium-gray;
+  }
+}
