@@ -4,9 +4,10 @@ angular.module('personalSite.home', ['classy', 'personalSite.navigationItems', '
   .classy.controller({
     name: 'homeCtrl',
 
-    inject: ['$scope', 'siteConfig'],
+    inject: ['$scope', 'siteConfig', 'Home'],
 
     init: function() {
       this.$.config = this.siteConfig
+      this.Home.runHomeAnimation()
     }
   })

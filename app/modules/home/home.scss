@@ -1,4 +1,10 @@
 .home {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
+
   .icons {
     @include display(flex);
     @include justify-content(flex-end);
@@ -11,7 +17,6 @@
     }
 
     .github {
-      @include animation(fade-in 1s 5.5s forwards ease-in-out);
       margin-right: .5em;
 
       &:hover {
@@ -20,8 +25,6 @@
     }
 
     .linkedin {
-      @include animation(fade-in 1s 6.5s forwards ease-in-out);
-
       &:hover {
         @include filter(brightness(120%));
       }
@@ -35,17 +38,32 @@
   .top-content {
     @include display(flex);
     @include justify-content(center);
-    padding-top: em(125);
     width: 100%;
   }
 
+  .fade-in {
+    &.active {
+      @include animation(fade-in 1s forwards ease-in-out);
+    }
+
+    &.disabled {
+      opacity: 1;
+    }
+  }
+
   .home-image-wrapper {
-    @include animation(image-slide 2s 1.5s forwards ease-in-out);
     position: relative;
+
+    &.active {
+      @include animation(image-slide 2s forwards ease-in-out);
+    }
+
+    &.disabled {
+      right: 3.5%;
+    }
   }
 
   .title-details {
-    @include animation(title-slide 2s 1.5s forwards ease-in-out);
     overflow: hidden;
     white-space: nowrap;
     position: relative;
@@ -53,31 +71,47 @@
     margin-top: .5em;
     width: 0;
 
+    &.active {
+      @include animation(title-slide 2s forwards ease-in-out);
+    }
+
+    &.disabled {
+      left: 2%;
+      width: em(495);
+    }
+
     .name {
       font-size: golden-ratio(45px, 1);
       height: 1.3em;
     }
 
     .subtite {
-      @include animation(subtitle-slide 1s 3.5s forwards ease-in-out);
-      @include span-columns(3);
       position: relative;
+      float: left;
       font-size: golden-ratio(45px, -1);
       overflow: hidden;
       left: 42%;
       height: .9em;
       line-height: .9em;
       width: 0;
+
+      &.active {
+        @include animation(subtitle-slide 1s forwards ease-in-out);
+      }
+
+      &.disabled {
+        width: em(115);
+        left: 1%;
+      }
     }
 
     .contact-details {
-      @include span-columns(7);
-      padding-left: 5.35765%;
+      padding-left: 2.2em;
+      float: left;
       font-size: golden-ratio(45px, -2);
     }
 
     .email {
-      @include animation(fade-in 1s 4.5s forwards ease-in-out);
       opacity: 0;
 
       a {
@@ -93,27 +127,25 @@
 
   .navigation-items {
     @include justify-content(center);
-
-    :first-child {
-      margin-right: 1em;
-    }
-
-    :last-child {
-      margin-left: 1em;
-    }
   }
 
   .navigation {
     @include span-columns(10);
-    @include shift(1);
     margin-top: em(80);
     color: $light-gray;
 
-    .item a {
-      @include transition(all .3s ease-in-out);
-      font-family: Tarantella;
-      font-size: 4em;
-      color: $medium-gray;
+    .item {
+
+      &:first-child {
+        margin-right: 10em;
+      }
+
+      a {
+        @include transition(all .3s ease-in-out);
+        font-family: Tarantella;
+        font-size: 4em;
+        color: $medium-gray;
+      }
     }
 
     .home-nav {
@@ -146,11 +178,11 @@
 @include keyframes(subtitle-slide) {
   0% {
     left: 40%;
-    width: 0%;
+    width: 0;
   }
 
   100% {
-    width: 40%;
+    width: em(115);
     left: 1%;
   }
 }
@@ -173,6 +205,6 @@
 
   100% {
     left: 2%;
-    width: 39%;
+    width: em(495);
   }
 }

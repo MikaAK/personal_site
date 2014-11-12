@@ -1,6 +1,10 @@
 $fadedCounter: 10;
 $grayCounter: 10;
 
+.image-wrapper {
+  @include fill-parent;
+}
+
 img.photo-ball {
   @include size(100%);
   border-radius: 50%;

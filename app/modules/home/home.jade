@@ -1,20 +1,20 @@
 section.home.fill-parent
   .top-content
-    .home-image-wrapper
+    .home-image-wrapper#image
       photo-ball(size='200' faded='7' src='config.home.centerImageUrl')
-    .title-details
+    .title-details#title
       .name
         | Mika Kalathil
-      .subtite
+      .subtite#subtitle
         | Web Developer
       .contact-details
-        .email(ng-if='config.email')
+        .email.fade-in(ng-if='config.email')#email
           | Email: <a ng-href="{{'mailto:' + config.email}}">{{config.email}}</a>
         .icons
-          a.github(ng-href='{{config.github.url}}' ng-if='config.github.url' target='_blank')
+          a.github.fade-in#git(ng-href='{{config.github.url}}' ng-if='config.github.url' target='_blank')
             img.image(ng-src='{{config.github.logoHigh}}' ng-onerror='{{config.github.logoLow}}' alt='github-logo')
               
-          a.linkedin(ng-href='{{config.linkedin.url}}' ng-if='config.linkedin.url' target='_blank')
+          a.linkedin.fade-in#linkedin(ng-href='{{config.linkedin.url}}' ng-if='config.linkedin.url' target='_blank')
             img.image(ng-src='{{config.linkedin.logoHigh}}' ng-onerror='{{config.linkedin.logoLow}}' alt='linkedin-logo')
   nav.navigation
     .home-nav

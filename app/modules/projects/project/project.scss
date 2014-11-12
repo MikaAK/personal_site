@@ -34,6 +34,10 @@
     margin-top: 1.5em;
     position: relative;
 
+    > img {
+      min-height: 172px;
+    }
+
     img {
       width: 100%;
     }
@@ -65,10 +69,10 @@
       left: 0;
       right: 0;
       width: 12.5%;
+      height: 22%;
       z-index: 99;
 
       img {
-        width: 100%;
         position: relative;
         bottom: 2em;
       }

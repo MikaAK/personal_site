@@ -14,8 +14,10 @@ angular.module('personalSite.photoBall', [])
         var size = attr.size + 'px',
             img  = ele.find('img')
 
-        ele.css('height', size)
-        ele.css('width', size)
+        if (attr.size) {
+          ele.css('height', size)
+          ele.css('width', size)
+        }
 
         if (img) {
           if ('faded' in attr)
