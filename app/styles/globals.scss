@@ -6,11 +6,11 @@ body > section,
 }
 
 .about-body {
+  height: auto;
 
-}
-
-.home-body {
-
+  @include media($lg-medium-screen) {
+    @include size(100%);
+  }
 }
 
 .projects-body {

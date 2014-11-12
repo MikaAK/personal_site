@@ -1,16 +1,61 @@
 .about {
   @include span-columns(12);
   @include display(flex);
+  @include flex-direction(column);
   @include align-items(center);
-  height: 90%; 
+  height: 90%;
+
+  @include media($lg-medium-screen) {
+    @include flex-direction(row);
+  }
+
+  img {
+    max-width: 286px;
+  }
+
+  .image-wrapper {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 1em;
+
+    @include media($small-screen) {
+      width: 286px;
+    }
+
+    @include media($lg-medium-screen) {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
 
   .personal-image {
-    @include shift(1);
-    @include span-columns(3 of 12);
+    @include shift(2);
+    @include span-columns(8 of 12);
+    margin-left: 0;
+    min-height: 200px;
+
+    @include media($small-screen) {
+      min-height: 286px;
+    }
+
+    @include media($lg-medium-screen) {
+      @include shift(1);
+      @include span-columns(3 of 12);
+      height: auto;
+    }
   }
 
   .bio {
-    @include span-columns(7 of 12);
+    @include span-columns(8 of 12);
+    @include shift(2);
+    margin-left: 0;
+    margin-top: 1em;
     color: $medium-gray;
+
+    @include media($lg-medium-screen) {
+      @include shift(0);
+      @include span-columns(7 of 12);
+      margin-top: 0;
+    }
   }
 }
