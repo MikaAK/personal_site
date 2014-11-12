@@ -11,11 +11,11 @@ $small-screen: em(480);
 $medium-screen: em(768);
 $lg-medium-screen: em(980);
 $large-screen: em(1024);
-$extra-large: em(1366);
+$extra-large-screen: em(1366);
 
 $small-screen-up: new-breakpoint(min-width $small-screen 2);
 $small-screen-down: new-breakpoint(max-width $small-screen 2);
 $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $lg-medium-screen-up: new-breakpoint(min-width $lg-medium-screen 3);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);
-$extra-large-up: new-breakpoint(min-width $extra-large 12);
+$extra-large-screen-up: new-breakpoint(min-width $extra-large-screen 12);

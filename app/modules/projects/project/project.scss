@@ -50,13 +50,21 @@
     .description {
       @include transition(all .5s ease-in-out);
       padding-top: em(10);
-      font-size: .9em;
+      font-size: 1em;
       position: absolute;
       top: 0;
       opacity: 0;
       height: 100%;
       color: $medium-gray;
       background-color: rgba($dark-gray, 1);
+
+      @include media($medium-screen) {
+        font-size: .7em;
+      }
+
+      @include media($large-screen) {
+        font-size: .9em;
+      }
     }
 
     .languages {
@@ -80,15 +88,23 @@
       margin: auto;
       opacity: 0;
       left: 0;
+      bottom: 2em;
       right: 0;
-      bottom: 1em;
       width: 12.5%;
       height: 22%;
       z-index: 99;
 
+      @include media(min-width 568px) {
+        bottom: 0;
+      }
+
       img {
         position: relative;
-        bottom: 2em;
+        bottom: 1.3em;
+
+        @include media($large-screen) {
+          bottom: 3em;
+        }
       }
 
       &:hover {
@@ -99,9 +115,25 @@
     .languages,
     .frameworks,
     .github-url {
-      font-size: .7em;
       color: $light-gray;
       position: absolute;
+      font-size: .6em;
+
+      @include media($medium-screen) {
+        font-size: 1em;
+      }
+
+      @include media($lg-medium-screen) {
+        font-size: 8px;
+      }
+
+      @include media(min-width 1150px) {
+        font-size: 10px;
+      }
+
+      @include media($extra-large-screen) {
+        font-size: .7em;
+      }
 
       strong {
         font-weight: bolder;
