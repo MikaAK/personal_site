@@ -47,7 +47,7 @@
     }
 
     &.disabled {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 
@@ -81,8 +81,16 @@
     }
 
     .name {
-      font-size: golden-ratio(45px, 1);
+      font-size: golden-ratio(45px, 0);
       height: 1.3em;
+
+      @include media($medium-screen) {
+        font-size: golden-ratio(45px, 1);
+      }
+
+      @include media($lg-medium-screen) {
+        font-size: golden-ratio(45px, 1);
+      }
     }
 
     .subtite {
@@ -114,6 +122,10 @@
     .email {
       opacity: 0;
 
+      &.disabled {
+        opacity: 1;
+      }
+
       a {
         @include transition(all .3s ease-in-out);
         color: $light-gray;
@@ -143,8 +155,16 @@
       a {
         @include transition(all .3s ease-in-out);
         font-family: Tarantella;
-        font-size: 4em;
+        font-size: 2.5em;
         color: $medium-gray;
+
+        @include media($medium-screen) {
+          font-size: 3em;
+        }
+
+        @include media($lg-medium-screen) {
+          font-size: 4em;
+        }
       }
     }
 
@@ -164,7 +184,8 @@
           width: 0;
           height: 97%;
           left: 0;
-          bottom: 2px;
+          bottom: 0;
+          top: 0;
         }
 
         &:hover:after {

@@ -20,21 +20,10 @@ angular.module('personalSite.home')
     this.runHomeAnimation = function() {
       this.findTitleAnimationElements()
 
-      if (!this.homeAnimationRun) {
-        $timeout(function() {
-          self._nameTitleSlide()
-        }, 2000)
-        this.homeAnimationRun = true
-      } else {
-        this._disableHomeAnimations()
-      }
-    }
-
-    this._disableHomeAnimations = function() {
-      angular.element([this.nameEle, this.imageEle, this.subtitleEle,
-      this.emailEle, this.githubEle, this.linkedinEle])
-        .removeClass('active')
-        .addClass('disabled')
+      $timeout(function() {
+        self._nameTitleSlide()
+      }, 2000)
+      this.homeAnimationRun = true
     }
 
     this._nameTitleSlide = function() {

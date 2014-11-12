@@ -8,17 +8,26 @@
     padding-bottom: 1em;
 
     .project-wrapper {
-      @include span-columns(4);
+      @include shift(2);
+      @include span-columns(8);
+
       height: percentage(312 / 1259);
       opacity: .6;
       padding-top: 2.5em;
 
-      &:nth-child(odd) {
-        margin-left: 12.5%;
+      @include media($lg-medium-screen) {
+        @include shift(0);
+        @include span-columns(4);
       }
 
-      &:nth-child(even) {
-        margin-right: 12.5%;
+      @include media($lg-medium-screen) {
+        &:nth-child(odd) {
+          margin-left: 12.5%;
+        }
+
+        &:nth-child(even) {
+          margin-right: 12.5%;
+        }
       }
     }
   }

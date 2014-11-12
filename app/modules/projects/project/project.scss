@@ -3,6 +3,11 @@
   background-color: $dark-gray;
   padding: 0 1.5em;
   padding-bottom: 1em;
+  font-size: .8em;
+
+  @include media(min-width 568px) {
+    font-size: 1em;
+  }
 
   &:hover {
     .project-image .description {
@@ -56,10 +61,18 @@
 
     .languages {
       left: 0;
+      bottom: 0;
     }
 
     .frameworks {
-      right: 0;
+      left: 0;
+      bottom: 1.2em;
+
+      @include media(min-width 568px) {
+        left: initial;
+        right: 0;
+        bottom: 0;
+      }
     }
 
     .github-url {
@@ -68,6 +81,7 @@
       opacity: 0;
       left: 0;
       right: 0;
+      bottom: 1em;
       width: 12.5%;
       height: 22%;
       z-index: 99;
@@ -85,7 +99,6 @@
     .languages,
     .frameworks,
     .github-url {
-      bottom: 0;
       font-size: .7em;
       color: $light-gray;
       position: absolute;
