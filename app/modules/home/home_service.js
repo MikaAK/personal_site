@@ -22,7 +22,7 @@ angular.module('personalSite.home')
 
       $timeout(function() {
         self._nameTitleSlide()
-      }, 2000)
+      }, 1500)
       this.homeAnimationRun = true
     }
 
@@ -57,6 +57,6 @@ angular.module('personalSite.home')
 
       $timeout(function() {
         self.linkedinEle.addClass('active')
-      }, 1000)
+      }, 750)
     }
   }])
