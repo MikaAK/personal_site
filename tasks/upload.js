@@ -1,22 +1,70 @@
 #! /usr/bin/env node
 
 var program = require('commander'),
-    s3      = require('s3'),
-    dotenv  = require('dotenv')
+    AWS     = require('aws-sdk'),
+    dotenv  = require('dotenv'),
+    fs      = require('fs')
 
 dotenv.load()
 
-var s3Client = s3.createClient({
-  maxAsyncS3: 20,
-  s3RetryCount: 3,    // this is the default
-  s3RetryDelay: 1000, // this is the default
-  multipartUploadThreshold: 20971520, // this is the default (20 MB)
-  multipartUploadSize: 15728640, // this is the default (15 MB)
-  s3Options: {
-    accessKeyId: process.env.S3_ACCESS_KEY,
-    secretAccessKey: process.env.S3_SECRET_KEY
-  }
+AWS.config.update({
+  region: 'us-west-2',
+  logger: process.stdout
 })
+
+var s3 = new AWS.S3()
+
+var S3_UPLOADER = function() {
+  this._findMetaData = function(fileName) {
+  var contentType       = 'application/octet-stream',
+      fileNameLowerCase = fileName.toLowerCase()
+
+    if (fileNameLowerCase.indexOf('.html') >= 0) contentType = 'text/html'
+    else if (fileNameLowerCase.indexOf('.css') >= 0) contentType = 'text/css'
+    else if (fileNameLowerCase.indexOf('.json') >= 0) contentType = 'application/json'
+    else if (fileNameLowerCase.indexOf('.js') >= 0) contentType = 'application/x-javascript'
+    else if (fileNameLowerCase.indexOf('.png') >= 0) contentType = 'image/png'
+    else if (fileNameLowerCase.indexOf('.jpg') >= 0) contentType = 'image/jpg'
+
+    return contentType
+  }
+
+  this._findFileName = function(filePath) {
+    return filePath.match(/[^\/]+$/).pop()
+  }
+
+  this.uploadFile = function(filePath) {
+    var fileStream = fs.readFileSync(filePath),
+        fileName   = this._findFileName(filePath),
+        metaData   = this._findMetaData(fileName),
+        config     = {
+          Key: fileName,
+          Bucket: process.env.S3_BUCKET,
+          ContentType: metaData,
+          CacheControl: 'max-age=315360000, no-transform, public',
+          Body: fileStream
+        }
+
+
+
+    s3.putObject(config, function(error, data) {
+      if (error) return console.log(error)
+      console.log('File was uploaded successfully')      
+    })
+  }
+
+  this.uploadFolder = function(folderPath) {
+    var files = fs.readdirSync(folderPath)
+
+    for (var i in files) {
+      this.uploadFile(folderPath + '/' + files[i])
+    }
+  }
+}
+
+Uploader = new S3_UPLOADER()
+
+Uploader.uploadFolder('./build')
 
 program
   .version('0.0.1')
