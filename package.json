@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
+    "commander": "^2.5.0",
+    "dotenv": "^0.4.0",
     "gulp": "^3.8.10",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-concat": "^2.4.1",
@@ -23,6 +25,7 @@
     "karma": "^0.12.21",
     "main-bower-files": "^1.0.1",
     "require-dir": "^0.1.0",
-    "run-sequence": "^1.0.1"
+    "run-sequence": "^1.0.1",
+    "s3": "^4.3.1"
   }
 }

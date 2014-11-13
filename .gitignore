@@ -69,3 +69,4 @@ build
 assets
 *.zip
 aws.json
+.env
