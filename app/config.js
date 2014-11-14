@@ -52,9 +52,20 @@ angular.module('personalSite')
         imageUrls: ['https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/projects/Cohortboard.png'],
         languages: ['Ruby'],
         frameworks: ['Rails'],
-        description: 'The cohort board was my midway project at Lighthouse Labs. ' +
+        description: 'The Cohort Board was my a project created during Lighthouse Labs. ' +
                      'It was an invite only app, created to enable employers to view ' +
-                     ' a students profile that the student themselves could setup.'
+                     'a students profile that the student themselves could setup.'
+      }, {
+        title: 'Generator-Mika',
+        url: 'https://www.npmjs.org/package/generator-mika',
+        imageUrls: ['https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/projects/Generator-mika.png'],
+        languages: ['Javascript'],
+        frameworks: ['Yeoman', 'Angular'],
+        description: 'Generator-mika was created using Yeoman in attempt to bring ' +
+                     'a higher level of customization while generating angular apps. ' +
+                     'This generator can optionally can include bootstrap, angular-classy,' +
+                     'neat and bourbon plus much more!'
+
       }
     ]
   })

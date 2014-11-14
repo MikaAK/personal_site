@@ -43,8 +43,8 @@ var S3_UPLOADER = function() {
   }
 
   this.uploadFile = function(filePath) {
-    var fileStream = this._gzipStream(fs.createReadStream(filePath)),
-        fileName   = this._findFileName(filePath),
+    var fileName   = this._findFileName(filePath),
+        fileStream = fs.readFileSync(fileName),
         metaData   = this._findMetaData(fileName),
         config     = {
           Key: fileName,
@@ -70,8 +70,6 @@ var S3_UPLOADER = function() {
   }
 }
 
-Uploader = new S3_UPLOADER()
-Uploader.uploadFolder('./build')
 
 program
   .version('0.0.1')
