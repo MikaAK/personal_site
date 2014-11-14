@@ -3,7 +3,8 @@
 var program = require('commander'),
     AWS     = require('aws-sdk'),
     dotenv  = require('dotenv'),
-    fs      = require('fs')
+    fs      = require('fs'),
+    zlib    = require('zlib')
 
 dotenv.load()
 
@@ -33,8 +34,16 @@ var S3_UPLOADER = function() {
     return filePath.match(/[^\/]+$/).pop()
   }
 
+  this._findEncodingType = function(fileName) {
+
+  }
+
+  this._gzipStream = function(fileStream) {
+    return fileStream.pipe(zlib.createGzip())
+  }
+
   this.uploadFile = function(filePath) {
-    var fileStream = fs.readFileSync(filePath),
+    var fileStream = this._gzipStream(fs.createReadStream(filePath)),
         fileName   = this._findFileName(filePath),
         metaData   = this._findMetaData(fileName),
         config     = {
@@ -42,14 +51,13 @@ var S3_UPLOADER = function() {
           Bucket: process.env.S3_BUCKET,
           ContentType: metaData,
           CacheControl: 'max-age=315360000, no-transform, public',
-          Body: fileStream
+          Body: fileStream,
+          ContentEncoding: this._findEncodingType(fileName)
         }
-
-
 
     s3.putObject(config, function(error, data) {
       if (error) return console.log(error)
-      console.log('File was uploaded successfully')      
+      console.log('File was uploaded successfully')
     })
   }
 
@@ -63,7 +71,6 @@ var S3_UPLOADER = function() {
 }
 
 Uploader = new S3_UPLOADER()
-
 Uploader.uploadFolder('./build')
 
 program
