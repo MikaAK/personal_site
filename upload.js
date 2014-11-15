@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
-var program = require('commander'),
-    AWS     = require('aws-sdk'),
+var AWS     = require('aws-sdk'),
     dotenv  = require('dotenv'),
     fs      = require('fs'),
     zlib    = require('zlib')
@@ -43,11 +42,11 @@ var S3_UPLOADER = function() {
   }
 
   this.uploadFile = function(filePath) {
-    var fileName   = this._findFileName(filePath),
+    var fileName   = filePath,
         fileStream = fs.readFileSync(fileName),
         metaData   = this._findMetaData(fileName),
         config     = {
-          Key: fileName,
+          Key: this._findFileName(fileName),
           Bucket: process.env.S3_BUCKET,
           ContentType: metaData,
           CacheControl: 'max-age=315360000, no-transform, public',
@@ -70,6 +69,5 @@ var S3_UPLOADER = function() {
   }
 }
 
-
-program
-  .version('0.0.1')
+var uploader = new S3_UPLOADER()
+uploader.uploadFolder('./build')

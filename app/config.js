@@ -58,6 +58,7 @@ angular.module('personalSite')
       }, {
         title: 'Generator-Mika',
         url: 'https://www.npmjs.org/package/generator-mika',
+        githubUrl: 'https://github.com/MikaAK/generator-mika',
         imageUrls: ['https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/projects/Generator-mika.png'],
         languages: ['Javascript'],
         frameworks: ['Yeoman', 'Angular'],
