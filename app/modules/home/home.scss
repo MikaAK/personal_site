@@ -13,7 +13,6 @@
     .linkedin {
       @include size(25px);
       @include transition(all .5s ease-in-out);
-      opacity: 0;
     }
 
     .github {
@@ -42,24 +41,23 @@
   }
 
   .fade-in {
+    opacity: 0;
+
     &.active {
       @include animation(fade-in 1s forwards ease-in-out);
-    }
-
-    &.disabled {
-      opacity: 1 !important;
     }
   }
 
   .home-image-wrapper {
     position: relative;
+    right: 3.5%;
+
+    &.animation {
+      right: 0%;
+    }
 
     &.active {
       @include animation(image-slide 2s forwards ease-in-out);
-    }
-
-    &.disabled {
-      right: 3.5%;
     }
   }
 
@@ -69,15 +67,16 @@
     position: relative;
     color: $medium-gray;
     margin-top: .5em;
-    width: 0;
+    left: 2%;
+    width: em(495);
+
+    &.animation {
+      width: 0;
+      left: 0;
+    }
 
     &.active {
       @include animation(title-slide 2s forwards ease-in-out);
-    }
-
-    &.disabled {
-      left: 2%;
-      width: em(495);
     }
 
     .name {
@@ -98,18 +97,18 @@
       float: left;
       font-size: golden-ratio(45px, -1);
       overflow: hidden;
-      left: 42%;
       height: .9em;
       line-height: .9em;
-      width: 0;
+      width: em(115);
+      left: 1%;
+
+      &.animation {
+        width: 0;
+        left: 42%;
+      }
 
       &.active {
         @include animation(subtitle-slide 1s forwards ease-in-out);
-      }
-
-      &.disabled {
-        width: em(115);
-        left: 1%;
       }
     }
 
@@ -120,12 +119,6 @@
     }
 
     .email {
-      opacity: 0;
-
-      &.disabled {
-        opacity: 1;
-      }
-
       a {
         @include transition(all .3s ease-in-out);
         color: $light-gray;

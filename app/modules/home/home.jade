@@ -8,13 +8,13 @@ section.home.fill-parent
       .subtite#subtitle
         | Web Developer
       .contact-details
-        .email.fade-in(ng-if='config.email')#email
+        .email(ng-show='config.email')#email
           | Email: <a ng-href="{{'mailto:' + config.email}}">{{config.email}}</a>
         .icons
-          a.github.fade-in#git(ng-href='{{config.github.url}}' ng-if='config.github.url' target='_blank')
+          a.github#git(ng-href='{{config.github.url}}' ng-show='config.github.url' target='_blank')
             img.image(ng-src='{{config.github.logoHigh}}' ng-onerror='{{config.github.logoLow}}' alt='github-logo')
               
-          a.linkedin.fade-in#linkedin(ng-href='{{config.linkedin.url}}' ng-if='config.linkedin.url' target='_blank')
+          a.linkedin#linkedin(ng-href='{{config.linkedin.url}}' ng-show='config.linkedin.url' target='_blank')
             img.image(ng-src='{{config.linkedin.logoHigh}}' ng-onerror='{{config.linkedin.logoLow}}' alt='linkedin-logo')
   nav.navigation
     .home-nav

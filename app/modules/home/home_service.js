@@ -19,11 +19,21 @@ angular.module('personalSite.home')
 
     this.runHomeAnimation = function() {
       this.findTitleAnimationElements()
+      this.findIconAnimationElements()
 
-      $timeout(function() {
-        self._nameTitleSlide()
-      }, 1500)
-      this.homeAnimationRun = true
+      if (!this.homeAnimationRun) {
+        this.emailEle.addClass('fade-in')
+        this.githubEle.addClass('fade-in')
+        this.linkedinEle.addClass('fade-in')
+        this.subtitleEle.addClass('animation')
+        this.imageEle.addClass('animation')
+        this.nameEle.addClass('animation')
+
+        $timeout(function() {
+          self._nameTitleSlide()
+        }, 1500)
+        this.homeAnimationRun = true
+      }
     }
 
     this._nameTitleSlide = function() {
@@ -44,7 +54,6 @@ angular.module('personalSite.home')
     }
 
     this._emailFadeIn = function() {
-      this.findIconAnimationElements()
       this.emailEle.addClass('active')
 
       $timeout(function() {
