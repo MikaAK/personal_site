@@ -3,6 +3,7 @@ angular.module('personalSite')
     personalImageUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/personal_image.jpeg',
     backgroundUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/backgrounds/stary_night.jpg',
     resumeUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf',
+    loadingImageUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/personal_image.jpeg',
     github: {
       url: 'http://github.com/MikaAK',
       logoLow: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/github-low.png',

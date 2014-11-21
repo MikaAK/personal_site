@@ -1,4 +1,11 @@
 section.resume  
+  .loading-resume(ng-show='!resumeLoaded')
+    svg(viewBox="0 0 566 598" enable-background="new 0 0 566 598" xml:space="preserve")
+      g(transform="translate(0.000000,598.000000) scale(0.100000,-0.100000)")
+        path#first(d="M2710,5414c-601-42-1077-248-1498-650c-314-298-540-675-663-1107c-33-116-36-157-13-192c27-41,59-45,404-45c382,0,359-6,408,112c122,292,182,398,315,548c283,324,694,520,1129,537c409,17,781-108,1090-366l67-56l-224-225c-232-234-265-276-265-350c0-45,29-108,66-142c64-60,35-58,836-58c692,0,735,1,773,19c22,10,52,31,67,47c60,64,58,35,58,837v733l-26,52c-45,91-148,132-242,97c-38-15-88-59-264-233l-217-215l-57,53c-336,306-827,530-1294,590C3068,5412,2799,5420,2710,5414z")
+        path#second(d="M569,2592c-43-22-59-38-81-81l-28-53v-737c0-695,1-738,19-776c33-72,111-125,183-125c70,1,116,35,332,250l211,209l100-85c347-297,770-486,1245-555c111-17,467-16,600,0c517,64,962,275,1340,638c323,309,555,710,670,1159c21,79,22,95,11,122c-25,59-44,62-399,62c-319,0-321,0-346-22c-16-14-56-93-104-203c-113-260-226-421-406-577c-242-210-532-342-843-383c-448-60-913,80-1258,379l-40,34l226,229c183,185,229,237,244,275c35,94-6,197-97,242l-52,26h-737H622L569,2592z")
+    
   // Can't seem to load in via config file Temporary fix
-  a(href='https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf' target='_blank')
-    pdfviewer#viewer(src='https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf')
+  .loaded-resume(ng-show='resumeLoaded')    
+    a(href='https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf' target='_blank')
+      pdfviewer#viewer(src='https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf' on-page-load='pageLoaded(page,total)')

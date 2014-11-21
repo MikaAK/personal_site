@@ -50,6 +50,16 @@ body > section,
 }
 
 
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
 @include keyframes(fade-in) {
   0% {
     opacity: 0;

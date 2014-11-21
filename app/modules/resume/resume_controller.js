@@ -4,13 +4,18 @@ angular.module('personalSite.resume', ['classy', 'ngPDFViewer'])
   .classy.controller({
     name: 'resumeCtrl',
 
-    inject: {
-      $scope: '$',
-      PDFViewerService: 'pdf',
-      siteConfig: 'config'
-    },
+    inject: ['$scope', '$timeout', 'PDFViewerService'],
 
     init: function() {
-      this.$.viewer = pdf.Instance('viewer')
+      this.$.resumeLoaded = false
+      this._loaderIcon()
+    },
+
+    _loaderIcon: function() {
+      var self = this
+
+      this.$timeout(function() {
+        self.$.resumeLoaded = true
+      }, 2500)
     }
   })

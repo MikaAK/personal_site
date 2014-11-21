@@ -1,13 +1,49 @@
 .resume {
-  @include span-columns(6);
-  @include shift(3);
+  @include span-columns(12);
   margin-top: 2em;
   margin-bottom: 2em;
+  position: relative;
 
   #viewer,
   canvas,
   a {
     @include fill-parent;
     display: block;
+  }
+
+  .loaded-resume,
+  .loading-resume {
+    @include transition(all .75s ease-in-out);
+    position: absolute;
+    top: 0;
+    opacity: 1;
+
+    &.ng-hide {
+      opacity: 0;
+    }
+  }
+
+  .loaded-resume {
+    @include span-columns(6);
+    @include shift(3);
+  }
+
+  .loading-resume {
+    @include span-columns(2);
+    @include shift(5);
+    margin-top: 10em;
+
+    svg {
+      @include fill-parent;
+      @include animation(spin 2s infinite linear);
+
+      #first {
+        fill: tint($yellow, 80);
+      }
+
+      #second {
+        fill: tint($red, 80);
+      }
+    }
   }
 }

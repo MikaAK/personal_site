@@ -35,6 +35,7 @@ angular.module('personalSite',
       })
       .state('resume', {
         url: '/resume',
+        controller: 'resumeCtrl',
         templateUrl: 'modules/resume/resume.html'
       })
 
