@@ -1,9 +1,8 @@
 angular.module('personalSite')
   .constant('siteConfig', {
-    home: {
-      centerImageUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/personal_image.jpeg'
-    },
+    personalImageUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/personal_image.jpeg',
     backgroundUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/backgrounds/stary_night.jpg',
+    resumeUrl: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/assets/ResumeMika.pdf',
     github: {
       url: 'http://github.com/MikaAK',
       logoLow: 'https://s3-us-west-2.amazonaws.com/mikakalathil.ca/images/misc/github-low.png',

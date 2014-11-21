@@ -9,7 +9,8 @@ angular.module('personalSite',
    'personalSite.about',
    'personalSite.projects',
    'personalSite.navbar',
-   'personalSite.siteControl'
+   'personalSite.siteControl',
+   'personalSite.resume'
   ])
 
 	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -32,7 +33,11 @@ angular.module('personalSite',
         controller: 'projectsCtrl',
         templateUrl: 'modules/projects/projects.html'
       })
+      .state('resume', {
+        url: '/resume',
+        templateUrl: 'modules/resume/resume.html'
+      })
 
 		// use the HTML5 History API
-		$locationProvider.html5Mode(true)
+		// $locationProvider.html5Mode(true)
 	}])

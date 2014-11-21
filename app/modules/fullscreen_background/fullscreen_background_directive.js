@@ -12,6 +12,7 @@ angular.module('personalSite.fullscreenBackground', [])
         jsEle.style.backgroundSize = 'cover'
         jsEle.style.backgroundImage = 'url(' + attr.fullscreenBackground + ')'
         jsEle.style.backgroundRepeat = 'no-repeat'
+        jsEle.style.backgroundAttachment = 'fixed'
         jsEle.style.zIndex = -99
         jsEle.style.size = '100%'
       }

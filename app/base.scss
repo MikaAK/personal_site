@@ -1,3 +1,5 @@
+// Reset & Bower Styles
+// ====================
 @import '../bower_components/reset-scss/reset';
 @import '../bower_components/bourbon/dist/bourbon';
 @import 'vendor/base/grid-settings';
@@ -34,3 +36,7 @@
 // Navigation Items Module
 // =======================
 @import 'modules/navigation_items/navigation_items';
+
+// Resume Module
+// =============
+@import 'modules/resume/resume';
