@@ -11,6 +11,12 @@ angular.module('personalSite.navigationItems')
         })
       }
 
+      var findResume = function() {
+        return inputWrapped.find(function(im) {
+          return im.state == 'resume'
+        })
+      }
+
       var findProject = function() {
         return inputWrapped.find(function(im) {
           return im.state == 'projects'
@@ -27,12 +33,15 @@ angular.module('personalSite.navigationItems')
           inputWrapped = _(input),
           homeItem     = findHome(),
           projectItem  = findProject(),
+          resumeItem   = findResume(),
           aboutItem    = findAbout()
 
-      if (homeItem) 
+      if (homeItem)
         finalOrder.push(homeItem)
       if (projectItem)
         finalOrder.push(projectItem)
+      if (resumeItem)
+        finalOrder.push(resumeItem)
       if (aboutItem)
         finalOrder.push(aboutItem)
 

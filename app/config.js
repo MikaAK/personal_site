@@ -17,6 +17,7 @@ angular.module('personalSite')
     menuItems: [
       { title: 'Home',          state: 'home',     active: false },
       { title: 'Past Projects', state: 'projects', active: false },
+      { title: 'Resume',        state: 'resume',   active: false },
       { title: 'About Me',      state: 'about',    active: false }
     ],
     projects: [
