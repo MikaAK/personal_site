@@ -17,7 +17,7 @@
   },
   "overrides": {
     "ng-pdfviewer": {
-      "main": ["lib/pdf*.js", "lib/compatibility.js", "ng-pdfviewer.js"]
+      "main": ["lib/compatibility.js", "ng-pdfviewer.js"]
     }
   },
   "resolutions": {
