@@ -37,14 +37,9 @@ body > section,
 
 [ui-view] {
   @include transition(all 1s ease-in-out);
+  opacity: 1;
 
-  &.ng-leave,
-  &.ng-enter.ng-enter-active {
-    opacity: 1;
-  }
-
-  &.ng-enter,
-  &.ng-leave.ng-leave-active {
+  &.ng-hide {
     opacity: 0;
   }
 }

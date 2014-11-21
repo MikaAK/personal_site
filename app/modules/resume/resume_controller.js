@@ -14,6 +14,7 @@ angular.module('personalSite.resume', ['classy', 'ngPDFViewer'])
     _loaderIcon: function() {
       var self = this
 
+      // HACK Because isn't working properly
       this.$timeout(function() {
         self.$.resumeLoaded = true
       }, 2500)
